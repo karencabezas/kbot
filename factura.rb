@@ -1,1 +1,1 @@
-puts "hola"
+puts "******** FACTURA ********\n" + "Precio Unitario: $  \n" + "Cantidad:  \n" +"Total:  $  " 
