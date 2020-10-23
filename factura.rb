@@ -1,5 +1,5 @@
 def descuentos(subtotal)
-    @descuentos ={1000 => 3, 5000 => 5}
+    @descuentos ={1000 => 3, 5000 => 5, 7000 => 7,10000 => 10, 50000 => 15}
     @tasadescuento = @descuentos[@descuentos.select{|monto,tasa| subtotal>=monto}.keys.max]
     return subtotal*@tasadescuento
 end
