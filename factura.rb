@@ -1,7 +1,7 @@
 class Factura
     def initialize(estado)
         @estado = estado
-        @descuentos ={1000 => 3, 5000 => 5, 7000 => 7,10000 => 10, 50000 => 15}
+        @descuentos ={0 => 0, 1000 => 3, 5000 => 5, 7000 => 7,10000 => 10, 50000 => 15}
     end
 
     def descuentos(subtotal)
