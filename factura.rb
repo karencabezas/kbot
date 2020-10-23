@@ -1,9 +1,10 @@
-def facturas(cantidad)
-    preciodescuento = (cantidad*10)*0.03
-    totaldescuento= (cantidad*10 - preciodescuento)
+def facturas(cantidad,precioUnitario)
+    subtotal=cantidad*precioUnitario
+    preciodescuento = (subtotal)*0.03
+    totaldescuento= (subtotal - preciodescuento)
     total = totaldescuento + totaldescuento*0.0825
     "******** FACTURA ********\n" +
-    "Precio Unitario: $ 10 \n" +
+    "Precio Unitario: $ #{precioUnitario} \n" +
     "Cantidad: #{cantidad} \n" +
     "Descuento: 3% \n" +
     "Impuesto: 8.25% \n" +
@@ -12,4 +13,4 @@ end
 
 cantidad = ARGV[0].to_i
 precioUnitario = ARGV[1].to_i
-puts facturas(cantidad)
+puts facturas(cantidad,precioUnitario)
