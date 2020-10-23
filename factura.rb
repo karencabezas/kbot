@@ -16,7 +16,7 @@ class Factura
         "NT" => 8.00,
         "TX" => 6.25,
         "AL" => 4.00,
-        "CA" => 5.36}
+        "CA" => 8.25}
         if impuestos.include?(@estado)
             @tasaimpuesto = impuestos[@estado]
         else
@@ -55,6 +55,6 @@ class Factura
     end
 end
 cantidad = ARGV[0].to_i
-precioUnitario = ARGV[1].to_i
+precioUnitario = ARGV[1].to_f
 estado = Factura.new(ARGV[2])
 puts estado.facturas(cantidad,precioUnitario)
