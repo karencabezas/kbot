@@ -24,7 +24,9 @@ class Factura
         "******** FACTURA ********\n" +
         "Precio Unitario: $ #{precioUnitario} \n" +
         "Cantidad: #{cantidad} \n" +
+        "Subtotal sin descuento: $ #{subtotal} \n" +
         "Descuento: #{@tasadescuento} % \n" +
+        "Precio aplicando descuento: $ #{totaldescuento} \n" +
         "Impuesto: #{@tasaimpuesto} % \n" +
         "Total: $ #{total} " 
     end
