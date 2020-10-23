@@ -10,13 +10,19 @@ class Factura
     end
 
     def impuestos()
+        
         impuestos = {
         "UT"  => 6.85,
         "NT" => 8.00,
         "TX" => 6.25,
         "AL" => 4.00,
         "CA" => 5.36}
-        @tasaimpuesto = impuestos[@estado]
+        if impuestos.include?(@estado)
+            @tasaimpuesto = impuestos[@estado]
+        else
+            @tasaimpuesto = 0.0
+        end
+        
     end
 
     def facturas(cantidad,precioUnitario)
