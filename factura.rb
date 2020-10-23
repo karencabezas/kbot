@@ -20,7 +20,7 @@ class Factura
     end
 
     def facturas(cantidad,precioUnitario)
-        if precioUnitario>=0
+        if precioUnitario>=0 && cantidad>=0
             subtotal=cantidad*precioUnitario
             preciodescuento = descuentos(subtotal)*0.01
             totaldescuento= (subtotal - preciodescuento)
@@ -35,7 +35,7 @@ class Factura
             "Impuesto: #{@tasaimpuesto} % \n" +
             "Total: $ #{total} " 
         else
-            "Precio unitario inválido"
+            "Precio unitario o cantidad inválido"
         end
         
     end
