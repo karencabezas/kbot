@@ -11,6 +11,7 @@ class Factura
 
     def impuestos()
         impuestos = {
+        "UT"  => 6.85,
         "CA" => 5.36}
         @tasaimpuesto = impuestos[@estado]
     end
