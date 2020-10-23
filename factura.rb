@@ -1,8 +1,10 @@
 def facturas(cantidad)
-    total= cantidad*10
-	"******** FACTURA ********\n" +
-	"Precio Unitario: $ 10 \n" +
-	"Cantidad: #{cantidad} \n" +
+    preciodescuento = (cantidad*10)*0.03
+    total= cantidad*10 - preciodescuento
+    "******** FACTURA ********\n" +
+    "Precio Unitario: $ 10 \n" +
+    "Cantidad: #{cantidad} \n" +
+    "Descuento: 3% \n" +
     "Total: $ #{total} " 
 end
 
