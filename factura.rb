@@ -20,19 +20,24 @@ class Factura
     end
 
     def facturas(cantidad,precioUnitario)
-        subtotal=cantidad*precioUnitario
-        preciodescuento = descuentos(subtotal)*0.01
-        totaldescuento= (subtotal - preciodescuento)
-        impuestos()
-        total = totaldescuento + totaldescuento*@tasaimpuesto*0.01
-        "******** FACTURA ********\n" +
-        "Precio Unitario: $ #{precioUnitario} \n" +
-        "Cantidad: #{cantidad} \n" +
-        "Subtotal sin descuento: $ #{subtotal} \n" +
-        "Descuento: #{@tasadescuento} % \n" +
-        "Precio aplicando descuento: $ #{totaldescuento} \n" +
-        "Impuesto: #{@tasaimpuesto} % \n" +
-        "Total: $ #{total} " 
+        if precioUnitario>=0
+            subtotal=cantidad*precioUnitario
+            preciodescuento = descuentos(subtotal)*0.01
+            totaldescuento= (subtotal - preciodescuento)
+            impuestos()
+            total = totaldescuento + totaldescuento*@tasaimpuesto*0.01
+            "******** FACTURA ********\n" +
+            "Precio Unitario: $ #{precioUnitario} \n" +
+            "Cantidad: #{cantidad} \n" +
+            "Subtotal sin descuento: $ #{subtotal} \n" +
+            "Descuento: #{@tasadescuento} % \n" +
+            "Precio aplicando descuento: $ #{totaldescuento} \n" +
+            "Impuesto: #{@tasaimpuesto} % \n" +
+            "Total: $ #{total} " 
+        else
+            "Precio unitario inválido"
+        end
+        
     end
 end
 cantidad = ARGV[0].to_i
