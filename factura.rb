@@ -4,19 +4,20 @@ def descuentos(subtotal)
     return subtotal*@tasadescuento
 end
 
-def facturas(cantidad,precioUnitario)
+def facturas(cantidad,precioUnitario,p_impuesto)
     subtotal=cantidad*precioUnitario
     preciodescuento = descuentos(subtotal)*0.01
     totaldescuento= (subtotal - preciodescuento)
-    total = totaldescuento + totaldescuento*0.0825
+    total = totaldescuento + totaldescuento*p_impuesto*0.01
     "******** FACTURA ********\n" +
     "Precio Unitario: $ #{precioUnitario} \n" +
     "Cantidad: #{cantidad} \n" +
     "Descuento: #{@tasadescuento} % \n" +
-    "Impuesto: 8.25% \n" +
+    "Impuesto: #{p_impuesto}% \n" +
     "Total: $ #{total} " 
 end
 
 cantidad = ARGV[0].to_i
 precioUnitario = ARGV[1].to_i
-puts facturas(cantidad,precioUnitario)
+p_impuesto = ARGV[2].to_i
+puts facturas(cantidad,precioUnitario,p_impuesto)
